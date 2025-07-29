@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>本日のラッキーご飯</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', cursive;
+      text-align: center;
+      background-color: #fff8f0;
+      padding: 50px;
+    }
+
+    h1 {
+      color: orange;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
+
+    #fortuneImage {
+      width: 300px;
+      height: auto;
+      border: 3px dashed orange;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    #fortuneImage:hover {
+      transform: scale(1.05);
+    }
+
+    #clickText {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>本日のラッキーご飯</h1>
+
+  <!-- 最初に表示される画像① -->
+  <img id="fortuneImage" src="https://example.com/image1.jpg" alt="占い画像">
+
+  <div id="clickText">クリックして占う</div>
+
+  <script>
+    const fortuneImage = document.getElementById("fortuneImage");
+
+    const images = [
+      "https://drive.google.com/file/d/1YUOOhAypCPvtxtVjjt6ThebbZrOCxZp7/view?usp=drive_link",
+      "https://drive.google.com/file/d/1pg22qIQuCyBg-NV-6sJF-BT7qliAYjWC/view?usp=drive_link",
+      "https://drive.google.com/file/d/1VN7dGU7abgJBbuQKnGUFGZ_vqWqYfSuV/view?usp=drive_link",
+      "https://drive.google.com/file/d/1YpJj4TLb1EZcs--uZK3gTedkTmeYTtpp/view?usp=drive_link",
+      "https://drive.google.com/file/d/1TAOhX7yZPuDGdh4yVbcYxfhc7cjA_ew3/view?usp=drive_link",
+      "https://drive.google.com/file/d/1-vuwl70pdC83IxFgQdy0Nu2V3ZaiXj1A/view?usp=drive_link",
+      "https://drive.google.com/file/d/15X4CVsrIw9niVWaIo2VuuTv-hH7MXdR-/view?usp=drive_link",
+      "https://drive.google.com/file/d/1_jQfjZKdJ-_qSUT5wAM1GFbn_SxYRe9V/view?usp=drive_link",
+      "https://drive.google.com/file/d/1kSGE8ZZaMW121uoj6E1T_bRDY67fR0Vp/view?usp=drive_link",
+      "https://drive.google.com/file/d/142OQdcDHIZlxzGs-I6g-_ygnGVgywhqE/view?usp=drive_link",
+      "https://drive.google.com/file/d/1V_UkqKZYP6q9XQkNYlE9lyRaM4iZvAG9/view?usp=drive_link"
+    ];
+
+    fortuneImage.addEventListener("click", () => {
+      const randomIndex = Math.floor(Math.random() * images.length);
+      fortuneImage.src = images[randomIndex];
+    });
+  </script>
+
+</body>
+</html>
