@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ランダム画像表示</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    #randomImage {
+      margin-top: 20px;
+      max-width: 90%;
+      height: auto;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ランダム画像表示サイト</h1>
+  <button onclick="showRandomImage()">画像を表示</button>
+  <div>
+    <img id="randomImage" src="" alt="ここに画像が表示されます">
+  </div>
+
+  <script>
+    const images = [
+      "https://example.com/image1.jpg",
+      "https://example.com/image2.jpg",
+      "https://example.com/image3.jpg",
+      "https://example.com/image4.jpg",
+      "https://example.com/image5.jpg",
+      "https://example.com/image6.jpg",
+      "https://example.com/image7.jpg",
+      "https://example.com/image8.jpg",
+      "https://example.com/image9.jpg",
+      "https://example.com/image10.jpg",
+      "https://example.com/image11.jpg",
+      "https://example.com/image12.jpg",
+      "https://example.com/image13.jpg",
+      "https://example.com/image14.jpg",
+      "https://example.com/image15.jpg"
+    ];
+
+    function showRandomImage() {
+      const randomIndex = Math.floor(Math.random() * images.length);
+      const selectedImage = images[randomIndex];
+      document.getElementById('randomImage').src = selectedImage;
+    }
+  </script>
+
+</body>
+</html>
