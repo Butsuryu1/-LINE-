@@ -41,13 +41,13 @@
 
   <h1>本日のラッキーご飯</h1>
 
-  <!-- 最初に表示される画像① -->
   <img id="fortuneImage" src="https://github.com/Butsuryu1/-LINE-/blob/main/%E7%84%A1%E9%A1%8C-12.png?raw=true" alt="占い画像">
 
   <div id="clickText">クリックして占う</div>
 
   <script>
     const fortuneImage = document.getElementById("fortuneImage");
+    const clickText = document.getElementById("clickText");
 
     const images = [
       "https://github.com/Butsuryu1/-LINE-/blob/main/%E7%84%A1%E9%A1%8C-12.png?raw=true",
@@ -64,9 +64,17 @@
       "https://github.com/Butsuryu1/-LINE-/blob/main/%E7%84%A1%E9%A1%8C-23.png?raw=true"
     ];
 
+    // 一度だけ実行させる
+    let alreadyClicked = false;
+
     fortuneImage.addEventListener("click", () => {
+      if (alreadyClicked) return;  // 2回目以降は無視
+      alreadyClicked = true;
+
       const randomIndex = Math.floor(Math.random() * images.length);
       fortuneImage.src = images[randomIndex];
+
+      clickText.textContent = "良い一日をお過ごしください！";
     });
   </script>
 
